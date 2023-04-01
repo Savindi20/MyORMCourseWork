@@ -11,9 +11,10 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="530.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.StudentFormController">
+<AnchorPane prefHeight="532.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.StudentFormController">
     <children>
           <Label layoutX="25.0" layoutY="90.0" text="Student ID">
               <font>
@@ -82,7 +83,7 @@
               </font>
           </Label>
           <JFXTextField layoutX="149.0" layoutY="128.0" />
-          <Label layoutX="339.0" layoutY="140.0" text="Contact">
+          <Label layoutX="339.0" layoutY="131.0" text="Contact">
               <font>
                   <Font name="System Bold" size="14.0" />
               </font>
@@ -93,5 +94,6 @@
                   <Font name="System Bold" size="14.0" />
               </font>
           </Label>
+      <Circle fill="DODGERBLUE" opacity="0.4" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
 </AnchorPane>
