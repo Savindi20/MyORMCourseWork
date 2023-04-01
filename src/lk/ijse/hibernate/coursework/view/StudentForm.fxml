@@ -18,13 +18,13 @@
     <children>
           <Label layoutX="25.0" layoutY="90.0" text="Student ID">
               <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font size="14.0" />
               </font>
           </Label>
           <JFXTextField layoutX="149.0" layoutY="79.0" />
-          <Label layoutX="345.0" layoutY="178.0" text="Gender">
+          <Label layoutX="340.0" layoutY="178.0" text="Gender">
               <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font size="14.0" />
               </font>
           </Label>
           <JFXDatePicker layoutX="149.0" layoutY="174.0" prefHeight="25.0" prefWidth="139.0" />
@@ -73,25 +73,25 @@
       </Label>
           <Label layoutX="345.0" layoutY="90.0" text="Name">
               <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font size="14.0" />
               </font>
           </Label>
           <JFXTextField layoutX="423.0" layoutY="79.0" prefHeight="25.0" prefWidth="135.0" />
-          <Label layoutX="23.0" layoutY="140.0" text="Address">
+          <Label layoutX="25.0" layoutY="131.0" text="Address">
               <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font size="14.0" />
               </font>
           </Label>
           <JFXTextField layoutX="149.0" layoutY="128.0" />
           <Label layoutX="339.0" layoutY="131.0" text="Contact">
               <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font size="14.0" />
               </font>
           </Label>
           <JFXTextField layoutX="423.0" layoutY="128.0" />
-          <Label layoutX="33.0" layoutY="178.0" text="DOB">
+          <Label layoutX="23.0" layoutY="178.0" text="Dateof BIrth">
               <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font size="14.0" />
               </font>
           </Label>
       <Circle fill="DODGERBLUE" opacity="0.4" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
