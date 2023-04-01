@@ -16,22 +16,22 @@
                 <Separator layoutX="1.0" layoutY="238.0" prefHeight="4.0" prefWidth="160.0" />
                 <Separator layoutX="1.0" layoutY="348.0" prefHeight="4.0" prefWidth="160.0" />
             <Separator layoutX="1.0" layoutY="456.0" prefHeight="4.0" prefWidth="160.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="132.0" prefHeight="110.0" prefWidth="160.0" text="User">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="132.0" onMouseClicked="#onClikUser" prefHeight="110.0" prefWidth="160.0" text="User">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="240.0" prefHeight="110.0" prefWidth="160.0" text="Student">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="240.0" onMouseClicked="#onClikStudent" prefHeight="110.0" prefWidth="160.0" text="Student">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="350.0" prefHeight="110.0" prefWidth="160.0" text="Room">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="350.0" onMouseClicked="#onClikRoom" prefHeight="110.0" prefWidth="160.0" text="Room">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="458.0" prefHeight="110.0" prefWidth="160.0" text="Reservation">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="458.0" onMouseClicked="#onClikReservation" prefHeight="110.0" prefWidth="160.0" text="Reservation">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -43,7 +43,7 @@
             </ImageView>            </children>
         </AnchorPane>
         <AnchorPane fx:id="MyPane" layoutX="162.0" layoutY="43.0" prefHeight="532.0" prefWidth="618.0" />
-        <Label layoutX="435.0" layoutY="9.0" text="The D24 Hostel">
+        <Label layoutX="388.0" layoutY="9.0" text="The D24 Hostel">
             <font>
                 <Font name="System Bold" size="23.0" />
             </font>
