@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="449.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.UserLoginFormController">
@@ -39,5 +40,6 @@
               </Label>
             </children>
         </AnchorPane>
+      <Circle fill="DODGERBLUE" opacity="0.4" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
 </AnchorPane>
