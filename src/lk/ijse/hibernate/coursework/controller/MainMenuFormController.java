@@ -9,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 public class MainMenuFormController {
     public AnchorPane MyPane;
-    public JFXButton btn;
+
 
     private void setNode(Node node) {
         MyPane.getChildren().clear();

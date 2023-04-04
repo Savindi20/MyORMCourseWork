@@ -12,7 +12,7 @@ public class DAOFactory {
         return (daoFactory == null) ? daoFactory = new DAOFactory() : daoFactory;
     }
 
-    public lk.ijse.hibernate.coursework.dao.SuperDAO getDAO(DAOTypes types) {
+    public UserDAOImpl getDAO(DAOTypes types) {
 
         switch (types) {
             case USER:
