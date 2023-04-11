@@ -11,8 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 public class UserDAOImpl implements UserDAO {
-    private  Session session;
-
+    Transaction transaction = null;
+    private Session session;
 
     @Override
     public boolean save(User object) {
@@ -23,55 +23,47 @@ public class UserDAOImpl implements UserDAO {
         session.close();
         return true;
     }
-
     @Override
-    public void update(User object) {
-
-    }
-
-    @Override
-    public User get(String s) {
+    public ArrayList<User> getAll() {
         return null;
     }
 
     @Override
-    public void delete(User object) {
+    public boolean update(User entity) {
+        session = SessionFactoryConfiguration.getInstance().getSession();
+        transaction = session.beginTransaction();
+        session.update(entity);
+        transaction.commit();
+        session.close();
+        return true;
 
     }
+
+    @Override
+    public boolean delete(String id) {
+        session = SessionFactoryConfiguration.getInstance().getSession();
+        transaction = session.beginTransaction();
+        User user = null;
+        user = session.get(User.class, id);
+        session.delete(user);
+        transaction.commit();
+        return true;
+
+    }
+
+    @Override
+    public User search(String id) {
+        session = SessionFactoryConfiguration.getInstance().getSession();
+        transaction = session.beginTransaction();
+        User user = null;
+        user = session.get(User.class, id);
+        transaction.commit();
+        return user;
+    }
+
 
     @Override
     public void setSession(Session session) {
-
-    }
-
-    @Override
-    public List<String> geIds() throws Exception {
-        return null;
+        this.session = session;
     }
 }
-//    private Session session;
-//    private static UserDAOImpl userDAOImpl;
-//
-//    private UserDAOImpl() {
-//    }
-//    public static UserDAOImpl getInstance(){
-//        return null == userDAOImpl
-//                ?userDAOImpl =new UserDAOImpl()
-//                :userDAOImpl;
-//    }
-//    public void setSession(Session session) {
-//        this.session = session;
-//    }
-//
-//    //save
-//    @Override
-//    public String save(User user){
-//        return (String) session.save(user);
-//    }
-//
-//    //Update
-//    @Override
-//    public void update(User user){
-//        session.update(user);
-//    }
-
