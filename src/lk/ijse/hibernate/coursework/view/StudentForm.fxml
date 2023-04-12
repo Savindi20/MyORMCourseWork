@@ -20,14 +20,14 @@
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXTextField layoutX="149.0" layoutY="79.0" />
+          <JFXTextField fx:id="txtStudentID" layoutX="149.0" layoutY="79.0" onAction="#SearchStudentOnAction" />
           <Label layoutX="340.0" layoutY="178.0" text="Gender">
               <font>
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXDatePicker layoutX="149.0" layoutY="174.0" prefHeight="25.0" prefWidth="139.0" />
-          <JFXComboBox layoutX="421.0" layoutY="174.0" prefHeight="25.0" prefWidth="140.0" />
+          <JFXDatePicker fx:id="txtStudentBirth" layoutX="149.0" layoutY="174.0" prefHeight="25.0" prefWidth="139.0" />
+          <JFXComboBox fx:id="txtStudentGender" layoutX="421.0" layoutY="174.0" prefHeight="25.0" prefWidth="140.0" />
         <TableView layoutY="274.0" prefHeight="256.0" prefWidth="618.0">
             <columns>
                 <TableColumn prefWidth="106.0" text="Student ID" />
@@ -48,17 +48,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
          <children>
-                <JFXButton prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #E74C3C; -fx-background-radius: 5;" text="Delete" textFill="WHITE" GridPane.columnIndex="2">
+                <JFXButton onAction="#DeleteStudentOnAction" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #E74C3C; -fx-background-radius: 5;" text="Delete" textFill="WHITE" GridPane.columnIndex="2">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #3498DB; -fx-background-radius: 5;" text="Save" textFill="WHITE">
+                <JFXButton fx:id="btnSave" onAction="#SaveStudentOnAction" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #3498DB; -fx-background-radius: 5;" text="Save" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #2ECC71; -fx-background-radius: 5;" text="Update" textFill="WHITE" GridPane.columnIndex="1">
+                <JFXButton onAction="#UpdateStudentOnAction" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #2ECC71; -fx-background-radius: 5;" text="Update" textFill="WHITE" GridPane.columnIndex="1">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
@@ -75,20 +75,20 @@
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXTextField layoutX="423.0" layoutY="79.0" prefHeight="25.0" prefWidth="135.0" />
+          <JFXTextField fx:id="txtStudentName" layoutX="423.0" layoutY="79.0" prefHeight="25.0" prefWidth="135.0" />
           <Label layoutX="25.0" layoutY="131.0" text="Address">
               <font>
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXTextField layoutX="149.0" layoutY="128.0" />
+          <JFXTextField fx:id="txtStudentAddress" layoutX="149.0" layoutY="128.0" />
           <Label layoutX="339.0" layoutY="131.0" text="Contact">
               <font>
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXTextField layoutX="423.0" layoutY="128.0" />
-          <Label layoutX="23.0" layoutY="178.0" text="Dateof BIrth">
+          <JFXTextField fx:id="txtStudentContact" layoutX="423.0" layoutY="128.0" />
+          <Label layoutX="23.0" layoutY="178.0" prefHeight="20.0" prefWidth="84.0" text="Date of Birth">
               <font>
                   <Font size="14.0" />
               </font>
