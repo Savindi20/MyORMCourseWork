@@ -26,8 +26,8 @@ public class UserFormController {
         String userName = txtUserName.getText();
 
         try {
-            if (userBO.saveUser(new UserDTO(userID, password, userName))) {
-
+            if (userBO.saveUser(new UserDTO(userID,userName, password ))) {
+                Clear();
                 new Alert(Alert.AlertType.CONFIRMATION, "Saved..!").show();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..!").show();
@@ -36,18 +36,8 @@ public class UserFormController {
             e.printStackTrace();
         }
 
-
-//        if (btnSave.getText().equalsIgnoreCase("Save User")) {
-//            try {
-//                userBO.saveUser(new UserDTO(userID, password, userName));
-//                new Alert(Alert.AlertType.CONFIRMATION, "User is Saved..! ").show();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-////                new Alert(Alert.AlertType.WARNING, "Try Again..! ").show();
-//
-//            }
-//        }else { new Alert(Alert.AlertType.WARNING, "Try Again..! ").show();}
     }
+
     //Delete
     public void DeleteUserOnAction(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.WARNING, "Are Your Sure ! ", ButtonType.NO, ButtonType.YES);

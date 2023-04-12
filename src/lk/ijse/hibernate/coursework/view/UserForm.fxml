@@ -26,7 +26,7 @@
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton onAction="#saveUserOnAction" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #3498DB; -fx-background-radius: 5;" text="Save" textFill="WHITE">
+                <JFXButton fx:id="btnSave" onAction="#saveUserOnAction" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #3498DB; -fx-background-radius: 5;" text="Save" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>

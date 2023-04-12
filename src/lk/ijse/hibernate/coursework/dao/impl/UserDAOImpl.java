@@ -15,17 +15,18 @@ public class UserDAOImpl implements UserDAO {
     private Session session;
 
     @Override
+    public ArrayList<User> getAll() {
+        return null;
+    }
+
+    @Override
     public boolean save(User object) {
         session = SessionFactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
+        transaction = session.beginTransaction();
         session.save(object);
         transaction.commit();
         session.close();
         return true;
-    }
-    @Override
-    public ArrayList<User> getAll() {
-        return null;
     }
 
     @Override
