@@ -50,9 +50,10 @@ public class RoomFormController implements Initializable {
     public void SaveOnAction(ActionEvent actionEvent) {
 
         String roomID = txtRoomID.getText();
+        String type = String.valueOf(cmbRoomType.getValue());
         double keyMoney = Double.parseDouble(txtKeyMoney.getText());
         int qty = Integer.parseInt(txtQTY.getText());
-        String type = String.valueOf(cmbRoomType.getValue());
+
 
         try {
             if (roomBO.saveRoom(new RoomDTO(roomID, type, keyMoney, qty))) {
