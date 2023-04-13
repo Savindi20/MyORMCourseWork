@@ -1,33 +1,22 @@
-package lk.ijse.hibernate.coursework.entity;
+package lk.ijse.hibernate.coursework.dto;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import lombok.*;
 
-@Entity
-public class Room {
-    @Id
-    @Column(name = "room_type_id", length = 10)
+
+public class RoomDTO {
     private String room_type_id;
-    @Column(name = "type")
     private String type;
-    @Column(name = "key_money")
     private double key_money;
-    @Column(name = "qty")
     private int qty;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "room", fetch = FetchType.EAGER)
-    private List<Reservation> reservationList = new ArrayList<>();
-
-    public Room() {
+    public RoomDTO() {
     }
 
-    public Room(String room_type_id, String type, double key_money, int qty) {
+    public RoomDTO(String room_type_id, String type, double key_money, int qty) {
         this.room_type_id = room_type_id;
         this.type = type;
         this.key_money = key_money;
         this.qty = qty;
-        this.reservationList = reservationList;
     }
 
     public String getRoom_type_id() {
@@ -62,22 +51,13 @@ public class Room {
         this.qty = qty;
     }
 
-    public List<Reservation> getReservationList() {
-        return reservationList;
-    }
-
-    public void setReservationList(List<Reservation> reservationList) {
-        this.reservationList = reservationList;
-    }
-
     @Override
     public String toString() {
-        return "Room{" +
+        return "RoomDTO{" +
                 "room_type_id='" + room_type_id + '\'' +
                 ", type='" + type + '\'' +
                 ", key_money=" + key_money +
                 ", qty=" + qty +
-                ", reservationList=" + reservationList +
                 '}';
     }
 }

@@ -1,10 +1,12 @@
 package lk.ijse.hibernate.coursework.dao;
 
-import java.util.ArrayList;
+import lk.ijse.hibernate.coursework.entity.Student;
+
 import java.util.List;
 
 public interface CrudDAO<T> extends SuperDAO{
-    ArrayList<T> getAll();
+
+    List<T> getAll();
 
     boolean save(T entity);
 

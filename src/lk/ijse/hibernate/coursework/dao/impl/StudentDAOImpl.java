@@ -1,63 +1,71 @@
 package lk.ijse.hibernate.coursework.dao.impl;
 
-import lk.ijse.hibernate.coursework.dao.custom.UserDAO;
+
+import lk.ijse.hibernate.coursework.dao.custom.StudentDAO;
 import lk.ijse.hibernate.coursework.entity.Student;
-import lk.ijse.hibernate.coursework.entity.User;
 import lk.ijse.hibernate.coursework.util.SessionFactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
-public class UserDAOImpl implements UserDAO {
-    Transaction transaction = null;
+
+
+public class StudentDAOImpl implements StudentDAO {
+    private Transaction transaction = null;
     private Session session;
 
+
     @Override
-    public List<User> getAll() {
-        return null;
+    public List<Student> getAll() {
+        List<Student> student = null;
+        session = SessionFactoryConfiguration.getInstance().getSession();
+        transaction = session.beginTransaction();
+        student = session.createQuery("FROM Student ").list();
+        transaction.commit();
+        return student;
     }
 
     @Override
-    public boolean save(User object) {
+    public boolean save(Student entity) {
         session = SessionFactoryConfiguration.getInstance().getSession();
         transaction = session.beginTransaction();
-        session.save(object);
+        session.save(entity);
         transaction.commit();
         session.close();
         return true;
     }
 
     @Override
-    public boolean update(User entity) {
+    public boolean update(Student entity) {
         session = SessionFactoryConfiguration.getInstance().getSession();
         transaction = session.beginTransaction();
         session.update(entity);
         transaction.commit();
         session.close();
-        return true;
 
+        return true;
     }
 
     @Override
     public boolean delete(String id) {
         session = SessionFactoryConfiguration.getInstance().getSession();
         transaction = session.beginTransaction();
-        User user = null;
-        user = session.get(User.class, id);
-        session.delete(user);
+        Student student = null;
+        student = session.get(Student.class, id);
+        session.delete(student);
         transaction.commit();
-        return true;
 
+        return true;
     }
 
     @Override
-    public User search(String id) {
+    public Student search(String id) {
         session = SessionFactoryConfiguration.getInstance().getSession();
         transaction = session.beginTransaction();
-        User user = null;
-        user = session.get(User.class, id);
+        Student student = null;
+        student = session.get(Student.class, id);
         transaction.commit();
-        return user;
+        return student;
     }
 
 

@@ -24,29 +24,29 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
          <children>
-                <JFXButton prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #E74C3C; -fx-background-radius: 5;" text="Delete" textFill="WHITE" GridPane.columnIndex="2">
+                <JFXButton onAction="#DeleteOnAction" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #E74C3C; -fx-background-radius: 5;" text="Delete" textFill="WHITE" GridPane.columnIndex="2">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #2ECC71; -fx-background-radius: 5;" text="Update" textFill="WHITE" GridPane.columnIndex="1">
+                <JFXButton onAction="#UpdateOnAction" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #2ECC71; -fx-background-radius: 5;" text="Update" textFill="WHITE" GridPane.columnIndex="1">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #3498DB; -fx-background-radius: 5;" text="Save" textFill="WHITE">
+                <JFXButton onAction="#SaveOnAction" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #3498DB; -fx-background-radius: 5;" text="Save" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXButton>
          </children>
         </GridPane>
-        <TableView layoutY="276.0" prefHeight="256.0" prefWidth="618.0">
+        <TableView fx:id="tblRoom" layoutY="276.0" prefHeight="256.0" prefWidth="618.0">
             <columns>
-                <TableColumn prefWidth="149.00003051757812" text="Room ID " />
-                <TableColumn prefWidth="158.0" text="Type" />
-                <TableColumn prefWidth="191.0" text="Key Money" />
-                <TableColumn prefWidth="125.0" text="QTY" />
+                <TableColumn fx:id="colRoomID" prefWidth="149.00003051757812" text="Room ID " />
+                <TableColumn fx:id="colType" prefWidth="158.0" text="Type" />
+                <TableColumn fx:id="colKeyMoney" prefWidth="191.0" text="Key Money" />
+                <TableColumn fx:id="colQTY" prefWidth="125.0" text="QTY" />
             </columns>
         </TableView>
           <Label layoutX="42.0" layoutY="98.0" text="Room ID">
@@ -54,25 +54,25 @@
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXTextField layoutX="129.0" layoutY="96.0" />
+          <JFXTextField fx:id="txtRoomID" layoutX="129.0" layoutY="96.0" onAction="#SearchOnAction" />
           <Label layoutX="330.0" layoutY="98.0" text="Type">
               <font>
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXComboBox layoutX="406.0" layoutY="96.0" prefHeight="25.0" prefWidth="140.0" />
+          <JFXComboBox fx:id="cmbRoomType" layoutX="406.0" layoutY="96.0" prefHeight="25.0" prefWidth="140.0" />
           <Label layoutX="39.0" layoutY="163.0" text="Key Mony">
               <font>
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXTextField layoutX="129.0" layoutY="161.0" />
+          <JFXTextField fx:id="txtKeyMoney" layoutX="129.0" layoutY="161.0" />
           <Label layoutX="332.0" layoutY="164.0" text="QTY">
               <font>
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXTextField layoutX="409.0" layoutY="162.0" />
+          <JFXTextField fx:id="txtQTY" layoutX="409.0" layoutY="162.0" />
       <Label alignment="CENTER" layoutX="220.0" layoutY="14.0" prefHeight="36.0" prefWidth="181.0" style="-fx-background-color: #F0CAA3; -fx-background-radius: 20;" text="Rooms">
          <font>
             <Font name="System Bold" size="25.0" />
