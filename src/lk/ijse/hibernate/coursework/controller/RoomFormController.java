@@ -70,7 +70,7 @@ public class RoomFormController implements Initializable {
     public void UpdateOnAction(ActionEvent actionEvent) {
         RoomDTO room = new RoomDTO(
                 txtRoomID.getText(),
-                cmbRoomType.getId(),
+                (String) cmbRoomType.getValue(),
                 Double.parseDouble(txtKeyMoney.getText()),
                 Integer.parseInt(txtQTY.getText()));
 

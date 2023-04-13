@@ -1,7 +1,6 @@
 package lk.ijse.hibernate.coursework.dao.impl;
 
 import lk.ijse.hibernate.coursework.dao.custom.UserDAO;
-import lk.ijse.hibernate.coursework.entity.Student;
 import lk.ijse.hibernate.coursework.entity.User;
 import lk.ijse.hibernate.coursework.util.SessionFactoryConfiguration;
 import org.hibernate.Session;

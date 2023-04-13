@@ -150,6 +150,7 @@ public class StudentFormController implements Initializable {
         txtAddress.clear();
         txtContact.clear();
         txtName.clear();
+        txtDOB.clear();
         cmbGender.setValue("");
     }
 

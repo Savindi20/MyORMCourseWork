@@ -1,7 +1,5 @@
 package lk.ijse.hibernate.coursework.dao.impl;
 
-
-
 import lk.ijse.hibernate.coursework.dao.custom.RoomDAO;
 import lk.ijse.hibernate.coursework.entity.Room;
 import lk.ijse.hibernate.coursework.util.SessionFactoryConfiguration;

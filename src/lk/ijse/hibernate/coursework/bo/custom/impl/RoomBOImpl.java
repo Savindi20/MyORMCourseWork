@@ -4,9 +4,7 @@ import lk.ijse.hibernate.coursework.bo.custom.RoomBO;
 import lk.ijse.hibernate.coursework.dao.DAOFactory;
 import lk.ijse.hibernate.coursework.dao.custom.RoomDAO;
 import lk.ijse.hibernate.coursework.dto.RoomDTO;
-import lk.ijse.hibernate.coursework.dto.StudentDTO;
 import lk.ijse.hibernate.coursework.entity.Room;
-import lk.ijse.hibernate.coursework.entity.Student;
 import org.hibernate.Session;
 
 import java.util.ArrayList;
