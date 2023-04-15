@@ -47,13 +47,13 @@
                 <PasswordField fx:id="password" layoutX="27.0" layoutY="222.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-radius: 20;" />
             <ImageView fx:id="imgOpen" fitHeight="20.0" fitWidth="15.0" layoutX="203.0" layoutY="227.0" onMouseClicked="#OnClickEyeOpen" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../ORM-CourseWork/src/lk/ijse/hibernate/coursework/view/assests/openeye.png" />
+                  <Image url="@assests/openeye.png" />
                </image>
             </ImageView>
             <TextField fx:id="txtShowPassword" layoutX="27.0" layoutY="222.0" prefHeight="15.0" prefWidth="200.0" style="-fx-background-radius: 20;" />
             <ImageView fx:id="passwordEyeClose" fitHeight="20.0" fitWidth="15.0" layoutX="202.0" layoutY="227.0" onMouseClicked="#eyeClosedOnAction" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../ORM-CourseWork/src/lk/ijse/hibernate/coursework/view/assests/closeeye.png" />
+                  <Image url="@assests/closeeye.png" />
                </image>
             </ImageView>
             </children>

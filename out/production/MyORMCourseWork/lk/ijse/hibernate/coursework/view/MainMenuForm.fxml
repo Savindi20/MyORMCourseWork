@@ -5,7 +5,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="563.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.MainMenuFormController">
@@ -43,11 +42,10 @@
             </ImageView>            </children>
         </AnchorPane>
         <AnchorPane fx:id="MyPane" layoutX="162.0" layoutY="43.0" prefHeight="532.0" prefWidth="618.0" />
-        <Label layoutX="388.0" layoutY="9.0" text="The D24 Hostel">
+        <Label layoutX="388.0" layoutY="9.0" style="-fx-background-color: #;" text="The D24 Hostel">
             <font>
                 <Font name="System Bold" size="23.0" />
             </font>
         </Label>
-      <Circle fill="DODGERBLUE" opacity="0.4" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
 </AnchorPane>

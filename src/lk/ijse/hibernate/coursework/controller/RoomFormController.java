@@ -9,6 +9,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.hibernate.coursework.bo.BOFactory;
 import lk.ijse.hibernate.coursework.bo.custom.RoomBO;
 import lk.ijse.hibernate.coursework.dto.RoomDTO;
@@ -148,5 +149,28 @@ public class RoomFormController implements Initializable {
         txtQTY.clear();
         txtKeyMoney.clear();
         cmbRoomType.setValue("");
+    }
+
+    public void onActioncmbRoomType(ActionEvent actionEvent) {
+        String tid = String.valueOf(cmbRoomType.getValue());
+        if (tid.equals("Non-AC")) {
+            txtKeyMoney.setText("3100.00");
+        }
+        if (tid.equals("Non-AC / Food")) {
+            txtKeyMoney.setText("6500.00");
+        }
+        if (tid.equals("AC")) {
+            txtKeyMoney.setText("8900.00");
+        }
+        if (tid.equals("AC / Food ")) {
+            txtKeyMoney.setText("16000.00");
+        }
+    }
+
+    public void onActionCalculateTotal(KeyEvent keyEvent) {
+        double getqty = Double.parseDouble(txtQTY.getText());
+        double keyMoney = Double.parseDouble(txtKeyMoney.getText());
+        double result = getqty * keyMoney;
+        txtKeyMoney.setText(String.valueOf(result));
     }
 }

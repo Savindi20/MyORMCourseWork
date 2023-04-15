@@ -7,7 +7,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="449.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.LoginFormController">
@@ -48,17 +47,16 @@
                 <PasswordField fx:id="password" layoutX="27.0" layoutY="222.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-radius: 20;" />
             <ImageView fx:id="imgOpen" fitHeight="20.0" fitWidth="15.0" layoutX="203.0" layoutY="227.0" onMouseClicked="#OnClickEyeOpen" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../ORM-CourseWork/src/lk/ijse/hibernate/coursework/view/assests/openeye.png" />
+                  <Image url="@assests/openeye.png" />
                </image>
             </ImageView>
             <TextField fx:id="txtShowPassword" layoutX="27.0" layoutY="222.0" prefHeight="15.0" prefWidth="200.0" style="-fx-background-radius: 20;" />
-            <ImageView fx:id="passwordEyeClose" fitHeight="20.0" fitWidth="15.0" layoutX="203.0" layoutY="227.0" onMouseClicked="#eyeClosedOnAction" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="passwordEyeClose" fitHeight="20.0" fitWidth="15.0" layoutX="202.0" layoutY="227.0" onMouseClicked="#eyeClosedOnAction" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../ORM-CourseWork/src/lk/ijse/hibernate/coursework/view/assests/closeeye.png" />
+                  <Image url="@assests/closeeye.png" />
                </image>
             </ImageView>
             </children>
         </AnchorPane>
-      <Circle fill="DODGERBLUE" opacity="0.4" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
 </AnchorPane>
