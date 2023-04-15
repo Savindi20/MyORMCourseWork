@@ -5,6 +5,7 @@ import lk.ijse.hibernate.coursework.entity.Room;
 import lk.ijse.hibernate.coursework.util.SessionFactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -70,6 +71,15 @@ public class RoomDAOImpl implements RoomDAO {
     @Override
     public void setSession(Session session) {
         this.session = session;
+    }
+
+    @Override
+    public List<String> roomIds() {
+        String hql = "SELECT id from Room ";
+        Query<String> query=session.createQuery (hql);
+        List<String> results = query.list();
+        session.close();
+        return results;
     }
 }
 
