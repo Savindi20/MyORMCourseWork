@@ -4,8 +4,7 @@ import lk.ijse.hibernate.coursework.entity.Student;
 
 import java.util.List;
 
-public interface CrudDAO<T> extends SuperDAO{
-
+public interface CrudDAO<T> extends SuperDAO {
     List<T> getAll();
 
     boolean save(T entity);
@@ -15,4 +14,5 @@ public interface CrudDAO<T> extends SuperDAO{
     boolean delete(String id);
 
     T search(String id);
+    T getObject(String id);
 }

@@ -67,6 +67,11 @@ public class RoomDAOImpl implements RoomDAO {
         return room;
     }
 
+    @Override
+    public Room getObject(String id) {
+        return null;
+    }
+
 
     @Override
     public void setSession(Session session) {

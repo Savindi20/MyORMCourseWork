@@ -9,15 +9,25 @@ import java.util.List;
 
 public interface ReservationBO extends SuperBO {
     List<String> getStudentIds();
+
     List<String> getRoomIds();
+
+    //    List<String> getRoomTypes();
     StudentDTO getStudent(String id);
+
     RoomDTO getRoom(String id);
+
+    List<ReservationDTO> getAllReservation() throws Exception;
 
     boolean saveReservation(ReservationDTO dto);
 
     boolean updateRoom(RoomDTO dto);
 
-    boolean deleteReservation(ReservationDTO dto);
+    boolean updateReservation(ReservationDTO dto);
 
-//    RoomDTO searchRoom(String id) throws Exception;
+    ReservationDTO searchReservation(String id) throws Exception;
+
+    List<ReservationDTO> loadAllRes();
+
+    boolean deleteReservation(ReservationDTO dto);
 }

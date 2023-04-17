@@ -41,13 +41,13 @@
                 </JFXButton>
          </children>
         </GridPane>
-        <TableView layoutY="275.0" prefHeight="256.0" prefWidth="618.0">
+        <TableView fx:id="tblReservation" layoutY="275.0" prefHeight="256.0" prefWidth="618.0">
             <columns>
-                <TableColumn prefWidth="136.33333587646484" text="Res ID" />
-                <TableColumn prefWidth="117.66666412353516" text="Date" />
-                <TableColumn prefWidth="122.00001525878906" text="Student ID" />
-                <TableColumn prefWidth="122.888916015625" text="Room Type" />
-                <TableColumn prefWidth="137.55551147460938" text="Status" />
+                <TableColumn fx:id="colResID" prefWidth="136.33333587646484" text="Res ID" />
+                <TableColumn fx:id="colDate" prefWidth="117.66666412353516" text="Date" />
+                <TableColumn fx:id="colStudentID" prefWidth="122.00001525878906" text="Student ID" />
+                <TableColumn fx:id="colRoomType" prefWidth="122.888916015625" text="Room Type" />
+                <TableColumn fx:id="colStatus" prefWidth="116.0" text="Status" />
             </columns>
         </TableView>
           <Label layoutX="33.0" layoutY="80.0" text="ReservationID">
@@ -73,7 +73,7 @@
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXComboBox fx:id="cmbRoomTypeID" layoutX="433.0" layoutY="131.0" prefHeight="25.0" prefWidth="140.0" />
+          <JFXComboBox fx:id="cmbRoomTypeID" layoutX="404.0" layoutY="131.0" prefHeight="25.0" prefWidth="140.0" />
       <Label alignment="CENTER" layoutX="223.0" layoutY="14.0" prefHeight="36.0" prefWidth="181.0" style="-fx-background-color: #F0CAA3; -fx-background-radius: 20;" text="Reservation">
          <font>
             <Font name="System Bold" size="25.0" />
@@ -84,6 +84,10 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtDate" layoutX="435.0" layoutY="77.0" />
+      <Label fx:id="lblDate" layoutX="404.0" layoutY="79.0" prefHeight="20.0" prefWidth="135.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

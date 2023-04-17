@@ -1,5 +1,6 @@
 package lk.ijse.hibernate.coursework.entity;
 
+import lk.ijse.hibernate.coursework.dto.StudentDTO;
 import lombok.*;
 
 import javax.persistence.*;
@@ -9,7 +10,7 @@ import java.util.List;
 
 
 @Entity
-public class Student {
+public class Student extends StudentDTO {
     @Id
     @Column(name = "student_id", length = 10)
     private String student_id;
@@ -25,7 +26,7 @@ public class Student {
     private String gender;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "student")
-    private List<Reservation> reservationList = new ArrayList<>();
+    private List<Reservation> reservationList;
 
     public Student() {
     }
@@ -37,7 +38,6 @@ public class Student {
         this.contact_no = contact_no;
         this.dob = dob;
         this.gender = gender;
-        this.reservationList = reservationList;
     }
 
     public String getStudent_id() {
@@ -88,16 +88,9 @@ public class Student {
         this.gender = gender;
     }
 
-    public List<Reservation> getReservationList() {
-        return reservationList;
-    }
-
-    public void setReservationList(List<Reservation> reservationList) {
-        this.reservationList = reservationList;
-    }
-
     @Override
-    public String toString() {
+    public String
+    toString() {
         return "Student{" +
                 "student_id='" + student_id + '\'' +
                 ", name='" + name + '\'' +
@@ -105,7 +98,6 @@ public class Student {
                 ", contact_no='" + contact_no + '\'' +
                 ", dob='" + dob + '\'' +
                 ", gender='" + gender + '\'' +
-                ", reservationList=" + reservationList +
                 '}';
     }
 }

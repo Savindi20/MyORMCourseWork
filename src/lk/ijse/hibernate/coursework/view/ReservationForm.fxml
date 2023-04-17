@@ -41,13 +41,13 @@
                 </JFXButton>
          </children>
         </GridPane>
-        <TableView layoutY="275.0" prefHeight="256.0" prefWidth="618.0">
+        <TableView fx:id="tblReservation" layoutY="275.0" prefHeight="256.0" prefWidth="618.0">
             <columns>
-                <TableColumn prefWidth="136.33333587646484" text="Res ID" />
-                <TableColumn prefWidth="117.66666412353516" text="Date" />
-                <TableColumn prefWidth="122.00001525878906" text="Student ID" />
-                <TableColumn prefWidth="122.888916015625" text="Room Type" />
-                <TableColumn prefWidth="137.55551147460938" text="Status" />
+                <TableColumn fx:id="colResID" prefWidth="136.33333587646484" text="Res ID" />
+                <TableColumn fx:id="colDate" prefWidth="117.66666412353516" text="Date" />
+                <TableColumn fx:id="colStudentID" prefWidth="122.00001525878906" text="Student ID" />
+                <TableColumn fx:id="colRoomType" prefWidth="122.888916015625" text="Room Type" />
+                <TableColumn fx:id="colStatus" prefWidth="116.0" text="Status" />
             </columns>
         </TableView>
           <Label layoutX="33.0" layoutY="80.0" text="ReservationID">
@@ -84,6 +84,10 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtDate" layoutX="404.0" layoutY="78.0" onAction="#SearchOnAction" />
+      <Label fx:id="lblDate" layoutX="404.0" layoutY="79.0" prefHeight="20.0" prefWidth="135.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

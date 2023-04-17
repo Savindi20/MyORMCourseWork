@@ -1,28 +1,28 @@
 package lk.ijse.hibernate.coursework.dto;
 
+import lk.ijse.hibernate.coursework.entity.Room;
+import lk.ijse.hibernate.coursework.entity.Student;
+
 import java.sql.Date;
 
 public class ReservationDTO {
     private String resId;
     private Date date;
-    private String student_id;
-    private String room_type_id;
-    private String status;
     private StudentDTO studentDTO;
     private RoomDTO roomDTO;
+    private String status;
 
-    public ReservationDTO() {
+    public ReservationDTO(String text, StudentDTO studnetDetail, RoomDTO roomDetail, String id) {
     }
 
-    public ReservationDTO(String resId, Date date, String student_id, String room_type_id, String status) {
+    public ReservationDTO(String resId, Date date, StudentDTO studentDTO, RoomDTO roomDTO, String status) {
         this.resId = resId;
         this.date = date;
-        this.student_id = student_id;
-        this.room_type_id = room_type_id;
+        this.setStudentDTO (studentDTO);
+        this.setRoomDTO (roomDTO);
         this.status = status;
-        this.studentDTO = studentDTO;
-        this.roomDTO = roomDTO;
     }
+
 
     public String getResId() {
         return resId;
@@ -38,30 +38,6 @@ public class ReservationDTO {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public String getStudent_id() {
-        return student_id;
-    }
-
-    public void setStudent_id(String student_id) {
-        this.student_id = student_id;
-    }
-
-    public String getRoom_type_id() {
-        return room_type_id;
-    }
-
-    public void setRoom_type_id(String room_type_id) {
-        this.room_type_id = room_type_id;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public StudentDTO getStudentDTO() {
@@ -80,17 +56,22 @@ public class ReservationDTO {
         this.roomDTO = roomDTO;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "ReservationDTO{" +
                 "resId='" + resId + '\'' +
                 ", date=" + date +
-                ", student_id='" + student_id + '\'' +
-                ", room_type_id='" + room_type_id + '\'' +
-                ", status='" + status + '\'' +
                 ", studentDTO=" + studentDTO +
                 ", roomDTO=" + roomDTO +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
-

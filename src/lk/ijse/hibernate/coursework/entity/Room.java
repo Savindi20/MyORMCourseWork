@@ -1,11 +1,13 @@
 package lk.ijse.hibernate.coursework.entity;
 
+import lk.ijse.hibernate.coursework.dto.RoomDTO;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Room {
+public class Room extends RoomDTO {
     @Id
     @Column(name = "room_type_id", length = 10)
     private String room_type_id;
@@ -15,9 +17,8 @@ public class Room {
     private double key_money;
     @Column(name = "qty")
     private int qty;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "room", fetch = FetchType.EAGER)
-    private List<Reservation> reservationList = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "room")
+    List<Reservation> reservationList;
 
     public Room() {
     }
@@ -27,7 +28,6 @@ public class Room {
         this.type = type;
         this.key_money = key_money;
         this.qty = qty;
-        this.reservationList = reservationList;
     }
 
     public String getRoom_type_id() {
@@ -62,14 +62,6 @@ public class Room {
         this.qty = qty;
     }
 
-    public List<Reservation> getReservationList() {
-        return reservationList;
-    }
-
-    public void setReservationList(List<Reservation> reservationList) {
-        this.reservationList = reservationList;
-    }
-
     @Override
     public String toString() {
         return "Room{" +
@@ -77,7 +69,6 @@ public class Room {
                 ", type='" + type + '\'' +
                 ", key_money=" + key_money +
                 ", qty=" + qty +
-                ", reservationList=" + reservationList +
                 '}';
     }
 }
