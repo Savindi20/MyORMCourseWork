@@ -168,9 +168,5 @@ public class RoomFormController implements Initializable {
     }
 
     public void onActionCalculateTotal(KeyEvent keyEvent) {
-        double getqty = Double.parseDouble(txtQTY.getText());
-        double keyMoney = Double.parseDouble(txtKeyMoney.getText());
-        double result = getqty * keyMoney;
-        txtKeyMoney.setText(String.valueOf(result));
     }
 }

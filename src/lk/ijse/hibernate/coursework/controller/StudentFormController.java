@@ -15,6 +15,7 @@ import lk.ijse.hibernate.coursework.bo.custom.StudentBO;
 import lk.ijse.hibernate.coursework.dto.StudentDTO;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class StudentFormController implements Initializable {
@@ -24,7 +25,6 @@ public class StudentFormController implements Initializable {
     public JFXTextField txtName;
     public JFXTextField txtAddress;
     public JFXTextField txtContact;
-    public JFXTextField txtDOB;
 
     public TableView tblStudent;
     public TableColumn colStudentID;
@@ -34,6 +34,7 @@ public class StudentFormController implements Initializable {
     public TableColumn colGender;
 
     public TableColumn colDBO;
+    public JFXDatePicker dobPicker;
 
     StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
 
@@ -60,7 +61,7 @@ public class StudentFormController implements Initializable {
         String name = txtName.getText();
         String address = txtAddress.getText();
         String contact = txtContact.getText();
-        String date = txtDOB.getText();
+        String date = String.valueOf(dobPicker.getValue());
         String gender = String.valueOf(cmbGender.getValue());
 
         try {
@@ -83,7 +84,7 @@ public class StudentFormController implements Initializable {
                 txtName.getText(),
                 txtAddress.getText(),
                 txtContact.getText(),
-                txtDOB.getText(),
+                String.valueOf(dobPicker.getValue()),
                 String.valueOf(cmbGender.getValue()));
 
         try {
@@ -119,7 +120,7 @@ public class StudentFormController implements Initializable {
         txtName.setText(student.getName());
         txtAddress.setText(student.getAddress());
         txtContact.setText(student.getContact_no());
-        txtDOB.setText(student.getDob());
+       dobPicker.setValue(LocalDate.parse(student.getDob()));
         cmbGender.setValue(student.getGender());
     }
 
@@ -150,8 +151,8 @@ public class StudentFormController implements Initializable {
         txtAddress.clear();
         txtContact.clear();
         txtName.clear();
-        txtDOB.clear();
-        cmbGender.setValue("");
+        dobPicker.setValue(null);
+        cmbGender.setValue(null);
     }
 
     public void SearchStudentOnAction(ActionEvent actionEvent) {

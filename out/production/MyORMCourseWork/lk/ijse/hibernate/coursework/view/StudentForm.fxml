@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -19,7 +20,7 @@
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXTextField fx:id="txtStudentID" layoutX="149.0" layoutY="79.0" onAction="#SearchStudentOnAction" />
+          <JFXTextField fx:id="txtStudentID" layoutX="141.0" layoutY="79.0" onAction="#SearchStudentOnAction" />
           <Label layoutX="340.0" layoutY="178.0" text="Gender">
               <font>
                   <Font size="14.0" />
@@ -79,7 +80,7 @@
                   <Font size="14.0" />
               </font>
           </Label>
-          <JFXTextField fx:id="txtAddress" layoutX="149.0" layoutY="128.0" />
+          <JFXTextField fx:id="txtAddress" layoutX="141.0" layoutY="128.0" />
           <Label layoutX="339.0" layoutY="131.0" text="Contact">
               <font>
                   <Font size="14.0" />
@@ -91,6 +92,6 @@
                   <Font size="14.0" />
               </font>
           </Label>
-      <JFXTextField fx:id="txtDOB" layoutX="149.0" layoutY="174.0" />
+      <JFXDatePicker fx:id="dobPicker" layoutX="141.0" layoutY="176.0" />
     </children>
 </AnchorPane>
