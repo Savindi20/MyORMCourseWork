@@ -49,6 +49,10 @@ public class ReservationFormController implements Initializable {
                         r.getRoomDTO(),
                         r.getStatus()
                 ));
+                System.out.println("===================================");
+                System.out.println(r.getResId()+" "
+                        +r.getDate()+" "+r.getStudentDTO()+" "+r.getRoomDTO());
+                System.out.println("===================================");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,80 +94,76 @@ public class ReservationFormController implements Initializable {
     }
 
     public void UpdateOnAction(ActionEvent actionEvent) {
-//
-//        String stId = cmbStudentID.getValue().toString();
-//        String roomID = cmbRoomTypeID.getValue().toString();
-//        String status = cmbStatus.getValue().toString();
-//        String resId = txtResID.getText();
-//        StudentDTO studentDTO = getStudnetDetail();
-//        RoomDTO roomDTO = getRoomDetail();
-//        java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-//
-//
-//        try {
-//            if (reservationBO.updateReservation(
-//                    new ReservationDTO(
-//                            resId,
-//                            sqlDate,
-//                            studentDTO,
-//                            roomDTO,
-//                            status))) {
-//                new Alert(Alert.AlertType.CONFIRMATION, "Ok").show();
-//                setDataTable();
-//                //  Clear();
-//            } else {
-//                new Alert(Alert.AlertType.ERROR, "Try Again..!").show();
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+
+        String status = cmbStatus.getValue().toString();
+        String resId = txtResID.getText();
+        StudentDTO studentDTO = getStudnetDetail();
+        RoomDTO roomDTO = getRoomDetail();
+        java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+
+        try {
+            if (reservationBO.updateReservation(
+                    new ReservationDTO(
+                            resId,
+                            sqlDate,
+                            studentDTO,
+                            roomDTO,
+                            status))) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Ok").show();
+                setDataTable();
+                //  Clear();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Try Again..!").show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void DeleteOnAction(ActionEvent actionEvent) {
-//        String stId = cmbStudentID.getValue().toString();
-//        String roomID = cmbRoomTypeID.getValue().toString();
-//        String status = cmbStatus.getValue().toString();
-//        String resId = txtResID.getText();
-//        StudentDTO studentDTO = getStudnetDetail();
-//        RoomDTO roomDTO = getRoomDetail();
-//        java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-//
-//        try{
-//            boolean isDelete=reservationBO.deleteReservation (
-//                    new ReservationDTO (
-//                            resId,
-//                            sqlDate,
-//                            studentDTO,
-//                            roomDTO,
-//                            status
-//                    ));
-//            if (isDelete){
-//                RoomDTO room=getRoomDetail ();
-//                room.setQty (room.getQty ()+1);
-//                reservationBO.updateRoom (room);
-//                setDataTable();
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace ();
-//        }
+        String status = cmbStatus.getValue().toString();
+        String resId = txtResID.getText();
+        StudentDTO studentDTO = getStudnetDetail();
+        RoomDTO roomDTO = getRoomDetail();
+        java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+        try{
+            boolean isDelete=reservationBO.deleteReservation (
+                    new ReservationDTO (
+                            resId,
+                            sqlDate,
+                            studentDTO,
+                            roomDTO,
+                            status
+                    ));
+            if (isDelete){
+                RoomDTO room=getRoomDetail ();
+                room.setQty (room.getQty ()+1);
+                reservationBO.updateRoom (room);
+                setDataTable();
+            }
+        }catch (Exception e){
+            e.printStackTrace ();
+        }
     }
 
     public void SearchOnAction(ActionEvent actionEvent) {
-//        ReservationDTO reservation;
-//        try {
-//            reservation = reservationBO.searchReservation(txtResID.getText());
-//            if (reservation != null) {
-//                fillData(reservation);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        ReservationDTO reservation;
+        try {
+            reservation = reservationBO.searchReservation(txtResID.getText());
+            if (reservation != null) {
+                fillData(reservation);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void fillData(ReservationDTO reservation) {
         txtResID.setText(reservation.getResId());
-        cmbStudentID.setValue(reservation.getStudentDTO());
-        cmbRoomTypeID.setValue(reservation.getRoomDTO());
+        cmbStudentID.setValue(reservation.getStudentDTO().getStudent_id());
+        cmbRoomTypeID.setValue(reservation.getRoomDTO().getRoom_type_id());
         cmbStatus.setValue(reservation.getStatus());
         lblDate.setText(String.valueOf(reservation.getDate()));
     }
