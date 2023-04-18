@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="563.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.MainMenuFormController">
+<AnchorPane prefHeight="596.0" prefWidth="795.0" style="-fx-background-color: #D6EAF8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.MainMenuFormController">
     <children>
-        <AnchorPane prefHeight="575.0" prefWidth="162.0" style="-fx-background-color: #F0CAA3;">
+        <AnchorPane layoutY="43.0" prefHeight="523.0" prefWidth="162.0" style="-fx-background-color: #A9CCE3;">
             <children>
-                <Separator layoutX="1.0" layoutY="130.0" prefHeight="4.0" prefWidth="160.0" />
-                <Separator layoutX="1.0" layoutY="238.0" prefHeight="4.0" prefWidth="160.0" />
-                <Separator layoutX="1.0" layoutY="348.0" prefHeight="4.0" prefWidth="160.0" />
-            <Separator layoutX="1.0" layoutY="456.0" prefHeight="4.0" prefWidth="160.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="132.0" onMouseClicked="#onClikUser" prefHeight="110.0" prefWidth="160.0" text="User">
+                <Separator layoutX="1.0" layoutY="107.0" prefHeight="4.0" prefWidth="160.0" />
+                <Separator layoutX="1.0" layoutY="215.0" prefHeight="4.0" prefWidth="160.0" />
+                <Separator layoutX="1.0" layoutY="319.0" prefHeight="4.0" prefWidth="160.0" />
+            <Separator layoutX="1.0" layoutY="427.0" prefHeight="4.0" prefWidth="160.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="111.0" onMouseClicked="#onClikUser" prefHeight="106.0" prefWidth="160.0" text="User">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="240.0" onMouseClicked="#onClikStudent" prefHeight="110.0" prefWidth="160.0" text="Student">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="215.0" onMouseClicked="#onClikStudent" prefHeight="106.0" prefWidth="160.0" text="Student">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="350.0" onMouseClicked="#onClikRoom" prefHeight="110.0" prefWidth="160.0" text="Room">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="323.0" onMouseClicked="#onClikRoom" prefHeight="106.0" prefWidth="160.0" text="Room">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="458.0" onMouseClicked="#onClikReservation" prefHeight="110.0" prefWidth="160.0" text="Reservation">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="431.0" onMouseClicked="#onClikReservation" prefHeight="106.0" prefWidth="160.0" text="Reservation">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <ImageView fitHeight="89.0" fitWidth="97.0" layoutX="37.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@assests/hostel.png" />
-                </image>
-            </ImageView>            </children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" onMouseClicked="#onClikMainManu" prefHeight="107.0" prefWidth="160.0" text="Dashboard">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btn" layoutX="45.0" layoutY="14.0" onAction="#onActionDashboard" opacity="0.0" style="-fx-background-color: blue;" text="      " />            </children>
         </AnchorPane>
-        <AnchorPane fx:id="MyPane" layoutX="162.0" layoutY="43.0" prefHeight="532.0" prefWidth="618.0" />
-        <Label layoutX="388.0" layoutY="9.0" style="-fx-background-color: #;" text="The D24 Hostel">
-            <font>
-                <Font name="System Bold" size="23.0" />
-            </font>
-        </Label>
+        <AnchorPane fx:id="MyPane" layoutX="162.0" layoutY="43.0" prefHeight="532.0" prefWidth="618.0" style="-fx-background-color: #EAF2F8;" />
+      <Label layoutX="406.0" prefHeight="41.0" prefWidth="130.0" text="D24 Hostel">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

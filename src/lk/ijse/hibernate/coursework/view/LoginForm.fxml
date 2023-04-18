@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D4E6F1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.LoginFormController">
+<AnchorPane prefHeight="391.0" prefWidth="588.0" style="-fx-background-color: #D4E6F1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.LoginFormController">
     <children>
-      <ImageView fitHeight="433.0" fitWidth="600.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="589.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
           <image>
               <Image url="@assests/banner1.jpg" />
           </image>
       </ImageView>
-        <AnchorPane layoutX="21.0" layoutY="23.0" prefHeight="357.0" prefWidth="262.0" style="-fx-background-color: #A9CCE3; -fx-background-radius: 10;">
+        <AnchorPane layoutX="21.0" layoutY="17.0" prefHeight="357.0" prefWidth="262.0" style="-fx-background-color: #A9CCE3; -fx-background-radius: 10;">
             <children>
                 <Label layoutX="96.0" layoutY="44.0" text="Login">
                     <font>

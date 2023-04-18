@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,14 +34,15 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" onMouseClicked="#onClikUser" prefHeight="107.0" prefWidth="160.0" text="Dashboard">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" onMouseClicked="#onClikMainManu" prefHeight="107.0" prefWidth="160.0" text="Dashboard">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
-            </Label>            </children>
+            </Label>
+            <JFXButton fx:id="btn" layoutX="45.0" layoutY="14.0" onAction="#onActionDashboard" opacity="0.0" style="-fx-background-color: blue;" text="      " />            </children>
         </AnchorPane>
         <AnchorPane fx:id="MyPane" layoutX="162.0" layoutY="43.0" prefHeight="532.0" prefWidth="618.0" style="-fx-background-color: #EAF2F8;" />
-      <Label layoutX="363.0" prefHeight="41.0" prefWidth="130.0" text="D24 Hostel">
+      <Label layoutX="406.0" prefHeight="41.0" prefWidth="130.0" text="D24 Hostel">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
