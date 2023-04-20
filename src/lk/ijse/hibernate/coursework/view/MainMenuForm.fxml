@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="596.0" prefWidth="795.0" style="-fx-background-color: #D6EAF8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.MainMenuFormController">
+<AnchorPane prefHeight="537.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.MainMenuFormController">
     <children>
-        <AnchorPane layoutY="43.0" prefHeight="523.0" prefWidth="162.0" style="-fx-background-color: #A9CCE3;">
+        <AnchorPane prefHeight="523.0" prefWidth="162.0" style="-fx-background-color: #A9CCE3;">
             <children>
                 <Separator layoutX="1.0" layoutY="107.0" prefHeight="4.0" prefWidth="160.0" />
                 <Separator layoutX="1.0" layoutY="215.0" prefHeight="4.0" prefWidth="160.0" />
@@ -34,18 +34,13 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" onMouseClicked="#onClikMainManu" prefHeight="107.0" prefWidth="160.0" text="Dashboard">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="4.0" onMouseClicked="#onClikMainManu" prefHeight="107.0" prefWidth="160.0" text="Dashboard">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
             <JFXButton fx:id="btn" layoutX="45.0" layoutY="14.0" onAction="#onActionDashboard" opacity="0.0" style="-fx-background-color: blue;" text="      " />            </children>
         </AnchorPane>
-        <AnchorPane fx:id="MyPane" layoutX="162.0" layoutY="43.0" prefHeight="532.0" prefWidth="618.0" style="-fx-background-color: #EAF2F8;" />
-      <Label layoutX="406.0" prefHeight="41.0" prefWidth="130.0" text="D24 Hostel">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
+        <AnchorPane fx:id="MyPane" layoutX="162.0" prefHeight="537.0" prefWidth="618.0" style="-fx-background-color: #EAF2F8;" />
     </children>
 </AnchorPane>

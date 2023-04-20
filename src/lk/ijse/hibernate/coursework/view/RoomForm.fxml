@@ -73,7 +73,7 @@
               </font>
           </Label>
           <JFXTextField fx:id="txtQTY" layoutX="409.0" layoutY="162.0" onKeyReleased="#onActionCalculateTotal" />
-      <Label alignment="CENTER" layoutX="220.0" layoutY="14.0" prefHeight="36.0" prefWidth="181.0" style="-fx-background-color: #F0CAA3; -fx-background-radius: 20;" text="Rooms">
+      <Label alignment="CENTER" layoutX="220.0" layoutY="14.0" prefHeight="36.0" prefWidth="181.0" style="-fx-background-color: #7BB4DA; -fx-background-radius: 20;" text="Rooms">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>

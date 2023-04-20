@@ -38,7 +38,7 @@
             </JFXButton>
             </children>
         </GridPane>
-        <Label alignment="CENTER" layoutX="219.0" layoutY="14.0" prefHeight="36.0" prefWidth="181.0" style="-fx-background-color: #F0CAA3; -fx-background-radius: 20;" text="User">
+        <Label alignment="CENTER" layoutX="219.0" layoutY="14.0" prefHeight="36.0" prefWidth="181.0" style="-fx-background-color: #7BB4DA; -fx-background-radius: 20;" text="User">
             <font>
                 <Font name="System Bold" size="25.0" />
             </font>
