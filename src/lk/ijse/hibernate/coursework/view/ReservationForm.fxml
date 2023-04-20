@@ -14,13 +14,13 @@
 
 <AnchorPane prefHeight="532.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.coursework.controller.ReservationFormController">
     <children>
-        <TableView fx:id="tblReservation" layoutY="275.0" prefHeight="256.0" prefWidth="618.0">
+        <TableView fx:id="tblReservation" layoutY="275.0" prefHeight="257.0" prefWidth="618.0">
             <columns>
-                <TableColumn fx:id="colResID" prefWidth="136.33333587646484" text="Res ID" />
-                <TableColumn fx:id="colDate" prefWidth="117.66666412353516" text="Date" />
-                <TableColumn fx:id="colStudentID" prefWidth="122.00001525878906" text="Student ID" />
-                <TableColumn fx:id="colRoomType" prefWidth="122.888916015625" text="Room Type" />
-                <TableColumn fx:id="colStatus" prefWidth="116.0" text="Status" />
+                <TableColumn fx:id="colResID" prefWidth="119.0" text="Res ID" />
+                <TableColumn fx:id="colDate" prefWidth="108.0" text="Date" />
+                <TableColumn fx:id="colStudentID" prefWidth="139.0" text="Student ID" />
+                <TableColumn fx:id="colRoomType" prefWidth="126.0" text="Room Type" />
+                <TableColumn fx:id="colStatus" prefWidth="125.0" text="Status" />
             </columns>
         </TableView>
           <Label layoutX="33.0" layoutY="80.0" text="ReservationID">

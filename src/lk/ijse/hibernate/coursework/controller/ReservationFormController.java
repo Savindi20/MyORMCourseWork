@@ -38,6 +38,39 @@ public class ReservationFormController implements Initializable {
 
     ReservationBO reservationBO = (ReservationBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.RESERVATION);
 
+    public void SaveOnAction(ActionEvent actionEvent) {
+        StudentDTO studentDTO = getStudnetDetail();
+        RoomDTO roomDTO = getRoomDetail();
+        String resID = txtResID.getText();
+        String status = cmbStatus.getValue().toString();
+        java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+        try {
+            boolean isSaveReservation = reservationBO.saveReservation(
+                    new ReservationDTO(
+                            resID,
+                            sqlDate,
+                            studentDTO,
+                            roomDTO,
+                            status
+                    ));
+
+
+            if (isSaveReservation) {
+                RoomDTO room = getRoomDetail();
+                room.setQty(room.getQty() - 1);
+                reservationBO.updateRoom(room);
+                setDataTable();
+                Clear();
+                new Alert(Alert.AlertType.CONFIRMATION, "QTY is Updated").show();
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void setDataTable() {
         tblReservation.getItems().clear();
         try {
@@ -60,39 +93,6 @@ public class ReservationFormController implements Initializable {
     }
 
 
-    public void SavaOnAction(ActionEvent actionEvent) {
-        StudentDTO studentDTO = getStudnetDetail();
-        RoomDTO roomDTO = getRoomDetail();
-        String resID = txtResID.getText();
-        String status = cmbStatus.getValue().toString();
-        java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-
-        try {
-            boolean isSaveReservation = reservationBO.saveReservation(
-                    new ReservationDTO(
-                            resID,
-                            sqlDate,
-                            studentDTO,
-                            roomDTO,
-                            status
-                    ));
-
-
-            if (isSaveReservation) {
-                RoomDTO room = getRoomDetail();
-                room.setQty(room.getQty() - 1);
-                reservationBO.updateRoom(room);
-            //    setDataTable();
-                new Alert(Alert.AlertType.CONFIRMATION, "QTY is Updated").show();
-            }
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
     public void UpdateOnAction(ActionEvent actionEvent) {
 
         String status = cmbStatus.getValue().toString();
@@ -112,7 +112,7 @@ public class ReservationFormController implements Initializable {
                             status))) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Ok").show();
                 setDataTable();
-                //  Clear();
+                  Clear();
             } else {
                 new Alert(Alert.AlertType.ERROR, "Try Again..!").show();
             }
@@ -122,30 +122,32 @@ public class ReservationFormController implements Initializable {
     }
 
     public void DeleteOnAction(ActionEvent actionEvent) {
-//        String status = cmbStatus.getValue().toString();
-//        String resId = txtResID.getText();
-//        StudentDTO studentDTO = getStudnetDetail();
-//        RoomDTO roomDTO = getRoomDetail();
-//        java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-//
-//        try{
-//            boolean isDelete=reservationBO.deleteReservation (
-//                    new ReservationDTO (
-//                            resId,
-//                            sqlDate,
-//                            studentDTO,
-//                            roomDTO,
-//                            status
-//                    ));
-//            if (isDelete){
-//                RoomDTO room=getRoomDetail ();
-//                room.setQty (room.getQty ()+1);
-//                reservationBO.updateRoom (room);
-//                setDataTable();
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace ();
-//        }
+        String status = cmbStatus.getValue().toString();
+        String resId = txtResID.getText();
+        StudentDTO studentDTO = getStudnetDetail();
+        RoomDTO roomDTO = getRoomDetail();
+        java.sql.Date sqlDate = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+        try{
+            boolean isDelete=reservationBO.deleteReservation (
+                    new ReservationDTO (
+                            resId,
+                            sqlDate,
+                            studentDTO,
+                            roomDTO,
+                            status
+                    ));
+            if (isDelete){
+                RoomDTO room=getRoomDetail ();
+                room.setQty (room.getQty ()+1);
+                reservationBO.updateRoom (room);
+                new Alert(Alert.AlertType.CONFIRMATION,"Qty is Updated").show();
+                setDataTable();
+                Clear();
+            }
+        }catch (Exception e){
+            e.printStackTrace ();
+        }
     }
 
     public void SearchOnAction(ActionEvent actionEvent) {
@@ -209,10 +211,17 @@ public class ReservationFormController implements Initializable {
         colResID.setCellValueFactory(new PropertyValueFactory<>("resId"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colStudentID.setCellValueFactory(new PropertyValueFactory<>("student_id"));
-        colRoomType.setCellValueFactory(new PropertyValueFactory<>("room_type_id"));
+        colRoomType.setCellValueFactory(new PropertyValueFactory<>("room_id"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
     }
 
+    private void Clear(){
+        cmbStatus.setValue(null);
+        txtResID.clear();
+        cmbRoomTypeID.setValue(null);
+        cmbStudentID.setValue(null);
+        lblDate.setText("");
+    }
 }
 

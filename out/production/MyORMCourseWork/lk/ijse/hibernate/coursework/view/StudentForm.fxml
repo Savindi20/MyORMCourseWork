@@ -27,17 +27,17 @@
               </font>
           </Label>
           <JFXComboBox fx:id="cmbGender" layoutX="421.0" layoutY="174.0" prefHeight="25.0" prefWidth="140.0" />
-        <TableView fx:id="tblStudent" layoutY="274.0" prefHeight="256.0" prefWidth="618.0">
+        <TableView fx:id="tblStudent" layoutY="281.0" prefHeight="257.0" prefWidth="618.0">
             <columns>
                 <TableColumn fx:id="colStudentID" prefWidth="106.0" text="Student ID" />
                 <TableColumn fx:id="colName" prefWidth="107.0" text="Name" />
                 <TableColumn fx:id="colAddress" prefWidth="102.0" text="Address" />
                 <TableColumn fx:id="colContact" prefWidth="108.0" text="Contact" />
-                <TableColumn fx:id="colDBO" prefWidth="92.0" text="DOB" />
+                <TableColumn fx:id="colDBO" prefWidth="98.0" text="DOB" />
                 <TableColumn fx:id="colGender" prefWidth="102.0" text="Gender" />
             </columns>
         </TableView>
-        <GridPane layoutX="306.0" layoutY="223.0" prefHeight="51.0" prefWidth="304.0">
+        <GridPane layoutX="293.0" layoutY="218.0" prefHeight="51.0" prefWidth="304.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
