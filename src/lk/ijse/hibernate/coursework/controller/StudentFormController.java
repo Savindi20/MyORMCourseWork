@@ -5,11 +5,10 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Paint;
 import lk.ijse.hibernate.coursework.bo.BOFactory;
 import lk.ijse.hibernate.coursework.bo.custom.StudentBO;
 import lk.ijse.hibernate.coursework.dto.StudentDTO;
@@ -17,6 +16,8 @@ import lk.ijse.hibernate.coursework.dto.StudentDTO;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StudentFormController implements Initializable {
 
@@ -35,6 +36,13 @@ public class StudentFormController implements Initializable {
 
     public TableColumn colDBO;
     public JFXDatePicker dobPicker;
+    public Label lblStudentName;
+    public Label lblStudentContact;
+    public Label lblStudentAddress;
+
+    private Matcher studentNameMatcher;
+    private  Matcher studentAddressMatcher;
+    private Matcher studentContactMatcher;
 
     StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
 
@@ -64,18 +72,35 @@ public class StudentFormController implements Initializable {
         String date = String.valueOf(dobPicker.getValue());
         String gender = String.valueOf(cmbGender.getValue());
 
-        try {
-            if (studentBO.saveStudent(new StudentDTO(studentID, name, address, contact, date, gender))) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Saved..!").show();
-                setDataTable();
-                Clear();
-            } else {
-                new Alert(Alert.AlertType.WARNING, "Try Again..!").show();
+        if (studentNameMatcher.matches()) {
+            if (studentAddressMatcher.matches()) {
+                if (studentContactMatcher.matches()) {
+                    try {
+                        if (studentBO.saveStudent(new StudentDTO(studentID, name, address, contact, date, gender))) {
+                            new Alert(Alert.AlertType.CONFIRMATION, "Saved..!").show();
+                            setDataTable();
+                            Clear();
+                        } else {
+                            new Alert(Alert.AlertType.WARNING, "Try Again..!").show();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }else {
+                    txtContact.requestFocus();
+                    txtContact.setFocusColor(Paint.valueOf("Red"));
+                    lblStudentContact.setText("Invalid Student Contact");
+                }
+            }else {
+                txtAddress.requestFocus();
+                txtAddress.setFocusColor(Paint.valueOf("Red"));
+                lblStudentAddress.setText("Invalid Student Address");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        }else {
+            txtName.requestFocus();
+            txtName.setFocusColor(Paint.valueOf("Red"));
+            lblStudentName.setText("Invalid Student Name");
         }
-
     }
 
     public void UpdateStudentOnAction(ActionEvent actionEvent) {
@@ -115,6 +140,18 @@ public class StudentFormController implements Initializable {
             }
         }
     }
+    public void SearchStudentOnAction(ActionEvent actionEvent) {
+        StudentDTO student;
+        try {
+            student = studentBO.searchStudent(txtStudentID.getText());
+            if (student != null) {
+                fillData(student);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void fillData(StudentDTO student) {
         txtStudentID.setText(student.getStudent_id());
         txtName.setText(student.getName());
@@ -138,11 +175,60 @@ public class StudentFormController implements Initializable {
         cmbGender.getItems().addAll(gender);
     }
 
+    public void txtStudentNameOnKeyType(KeyEvent keyEvent) {
+        lblStudentName.setText("");
+        txtName.setFocusColor(Paint.valueOf("Blue"));
+        Pattern studentNamePattern=Pattern.compile("^[a-zA-Z]{4,}$");
+        studentNameMatcher=studentNamePattern.matcher(txtName.getText());
+
+        if (!studentNameMatcher.matches()){
+            txtName.requestFocus();
+            txtName.setFocusColor(Paint.valueOf("Red"));
+            lblStudentName.setText("Invalid User Name");
+        }
+    }
+
+    public void txtStudentAddressOnKeyType(KeyEvent keyEvent) {
+        lblStudentAddress.setText("");
+        txtAddress.setFocusColor(Paint.valueOf("Blue"));
+        Pattern studentAddressPattern=Pattern.compile("^[a-zA-Z0-9]{4,}$");
+        studentAddressMatcher=studentAddressPattern.matcher(txtAddress.getText());
+
+        if (!studentAddressMatcher.matches()){
+            txtAddress.requestFocus();
+            txtAddress.setFocusColor(Paint.valueOf("Red"));
+            lblStudentAddress.setText("Invalid User Name");
+        }
+    }
+
+    public void txtStudentContacOnKeyType(KeyEvent keyEvent) {
+        lblStudentContact.setText("");
+        txtContact.setFocusColor(Paint.valueOf("Blue"));
+        Pattern studentContactPattern=Pattern.compile("^\\+?(94)?(0)?\\d{9}$");
+        studentContactMatcher=studentContactPattern.matcher(txtContact.getText());
+
+        if (!studentContactMatcher.matches()){
+            txtContact.requestFocus();
+            txtContact.setFocusColor(Paint.valueOf("Red"));
+            lblStudentContact.setText("Invalid User Name");
+        }
+    }
+
+    private  void setPatterns(){
+        Pattern studentNamePattern = Pattern.compile("^[a-zA-Z]{4,}$");
+        studentNameMatcher = studentNamePattern.matcher(txtName.getText());
+        Pattern studentAddressPattern = Pattern.compile("^[a-zA-Z0-9]{4,}$");
+        studentAddressMatcher = studentAddressPattern.matcher(txtAddress.getText());
+        Pattern studentContactPattern = Pattern.compile("^\\+?(94)?(0)?\\d{9}$");
+        studentContactMatcher = studentContactPattern.matcher(txtContact.getText());
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setGender();
         setDataTable();
         setTblValues();
+        setPatterns();
     }
 
 
@@ -155,15 +241,4 @@ public class StudentFormController implements Initializable {
         cmbGender.setValue(null);
     }
 
-    public void SearchStudentOnAction(ActionEvent actionEvent) {
-        StudentDTO student;
-        try {
-            student = studentBO.searchStudent(txtStudentID.getText());
-            if (student != null) {
-                fillData(student);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

@@ -12,7 +12,7 @@ public class AppInirializer  extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(this.getClass().getResource
-                ("/lk/ijse/hibernate/coursework/view/LoginForm.fxml"));
+                ("/lk/ijse/hibernate/coursework/view/MainMenuForm.fxml"));
         Scene mainScene = new Scene(root);
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("Hostel Management System");

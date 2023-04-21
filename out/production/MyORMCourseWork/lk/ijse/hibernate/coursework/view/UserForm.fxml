@@ -48,18 +48,20 @@
                 <Font size="14.0" />
             </font>
         </Label>
-        <JFXTextField fx:id="txtUserName" layoutX="428.0" layoutY="111.0" />
+        <JFXTextField fx:id="txtUserName" layoutX="428.0" layoutY="111.0" onKeyReleased="#txtUserNameOnKeyType" />
         <Label layoutX="33.0" layoutY="174.0" text="Password">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <JFXTextField fx:id="txtPassword" layoutX="141.0" layoutY="171.0" />
+        <JFXTextField fx:id="txtPassword" layoutX="141.0" layoutY="171.0" onKeyReleased="#txtPasswordOnKeyType" />
       <Label layoutX="33.0" layoutY="114.0" text="User ID">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <JFXTextField fx:id="txtUserID" layoutX="141.0" layoutY="111.0" onAction="#onActionSearchUser" />
+      <Label fx:id="lblUserName" layoutX="428.0" layoutY="143.0" prefHeight="17.0" prefWidth="135.0" textFill="RED" />
+      <Label fx:id="lblPassword" layoutX="141.0" layoutY="207.0" prefHeight="17.0" prefWidth="135.0" textFill="RED" />
     </children>
 </AnchorPane>
